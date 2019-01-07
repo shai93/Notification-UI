@@ -8,10 +8,6 @@ const routes: Routes = [
     component:FirstComponent
   },
   {
-    path:'**',
-    component:FirstComponent
-  },
-  {
     path:'notification-control-panel',
     component:FirstComponent
   },
