@@ -8,11 +8,15 @@ const routes: Routes = [
     component:FirstComponent
   },
   {
-    path:'first',
+    path:'**',
     component:FirstComponent
   },
   {
-    path:'second',
+    path:'notification-control-panel',
+    component:FirstComponent
+  },
+  {
+    path:'notification-control-panel/second',
     component:SecondComponent
   }
 ];
