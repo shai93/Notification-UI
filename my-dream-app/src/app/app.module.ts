@@ -6,20 +6,24 @@ import { AppComponent } from './app.component';
 import { FormioModule } from 'angular-formio';
 import { SecondComponent } from './second/second.component';
 import { FirstComponent } from './first/first.component';
-
+import { ThirdComponent } from './third/third.component';
+import {ApiService} from './api.service';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     SecondComponent,
-    FirstComponent
+    FirstComponent,
+    ThirdComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormioModule
+    FormioModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

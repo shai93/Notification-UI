@@ -1,0 +1,241 @@
+<div class="container">
+  <div class="col-md-12">
+    <div class="col-md-12">
+<formio [form]='{
+  "display": "form",
+  "components": [
+      {
+          "label": "Notification Type",
+          "multiple": true,
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "select",
+          "input": true,
+          "key": "notificationType",
+          "defaultValue": [],
+          "validate": {
+              "customMessage": "",
+              "json": ""
+          },
+          "data": {
+              "values": [
+                  {
+                      "label": "Email",
+                      "value": "email"
+                  },
+                  {
+                      "label": "SMS",
+                      "value": "sms"
+                  }
+              ]
+          },
+          "encrypted": false,
+          "properties": {},
+          "tags": [],
+          "valueProperty": "value"
+      },
+      {
+          "label": "Email",
+          "disableAddingRemovingRows": false,
+          "defaultOpen": false,
+          "addAnother": "",
+          "addAnotherPosition": "bottom",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "datagrid",
+          "input": true,
+          "key": "email",
+          "components": [
+              {
+                  "label": "Subject",
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "textfield",
+                  "input": true,
+                  "key": "subject",
+                  "validate": {
+                      "customMessage": "",
+                      "json": ""
+                  },
+                  "properties": {},
+                  "tags": [],
+                  "row": "0-0"
+              },
+              {
+                  "label": "Email Body",
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "textfield",
+                  "input": true,
+                  "key": "emailBody",
+                  "properties": {},
+                  "tags": [],
+                  "row": "0-1"
+              },
+              {
+                  "label": "Email ID",
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "multiple": true,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "type": "textfield",
+                  "input": true,
+                  "key": "emailId",
+                  "defaultValue": [
+                      ""
+                  ],
+                  "properties": {},
+                  "tags": [],
+                  "inputFormat": "plain",
+                  "encrypted": false,
+                  "row": "0-2"
+              }
+          ],
+          "properties": {},
+          "tags": [],
+          "validate": {
+              "customMessage": "",
+              "json": ""
+          },
+          "conditional": {
+              "show": "",
+              "when": "",
+              "json": ""
+          },
+          "encrypted": false,
+          "customConditional": "",
+          "logic": []
+      },
+      {
+          "label": "Unique Key",
+          "labelPosition": "left-left",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "labelWidth": 46,
+          "type": "textfield",
+          "input": true,
+          "key": "unique_key",
+          "defaultValue": "",
+          "validate": {
+              "customMessage": "",
+              "json": ""
+          },
+          "inputFormat": "plain",
+          "encrypted": false,
+          "properties": {},
+          "tags": [],
+          "customDefaultValue": "value=\"uniqueNumber\";"
+      },
+      {
+          "label": "Unique Number",
+          "labelPosition": "left-left",
+          "allowMultipleMasks": false,
+          "showWordCount": false,
+          "showCharCount": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "labelWidth": 46,
+          "type": "textfield",
+          "input": true,
+          "key": "uniqueNumber",
+          "widget": {
+              "type": ""
+          }
+      },
+      {
+          "label": "Alert DateTime",
+          "labelPosition": "left-left",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "labelWidth": 46,
+          "type": "datetime",
+          "input": true,
+          "key": "alertDateTime",
+          "suffix": true,
+          "widget": {
+              "type": "calendar",
+              "displayInTimezone": "viewer",
+              "language": "en",
+              "useLocaleSettings": false,
+              "allowInput": true,
+              "mode": "single",
+              "enableTime": true,
+              "noCalendar": false,
+              "format": "yyyy-MM-dd hh:mm a",
+              "defaultDate": "",
+              "hourIncrement": 1,
+              "minuteIncrement": 1,
+              "time_24hr": false,
+              "minDate": null,
+              "maxDate": null
+          }
+      },
+      {
+          "label": "Status Update",
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "container",
+          "input": true,
+          "key": "statusUpdate",
+          "components": [
+              {
+                  "label": "Webhook Url",
+                  "labelPosition": "left-left",
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "labelWidth": 46,
+                  "type": "textfield",
+                  "input": true,
+                  "key": "webhook_url",
+                  "properties": {},
+                  "tags": []
+              },
+              {
+                  "label": "Method",
+                  "labelPosition": "left-left",
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "labelWidth": 46,
+                  "type": "textfield",
+                  "input": true,
+                  "key": "method",
+                  "properties": {},
+                  "tags": [],
+                  "widget": {
+                      "type": ""
+                  }
+              }
+          ],
+          "properties": {},
+          "tags": []
+      },
+      {
+          "type": "button",
+          "label": "Submit",
+          "key": "submit",
+          "disableOnInvalid": true,
+          "theme": "primary",
+          "input": true,
+          "tableView": true
+      }
+  ]
+}' (submit)="onSubmit($event)"></formio>
+  </div>
+  </div>
+</div>
