@@ -4,6 +4,20 @@
 <formio [form]='{
   "display": "form",
   "components": [
+        {
+          "label": "HTML",
+          "tag": "h4",
+          "className": "",
+          "attrs": [],
+          "content": "<div class=\"well\">Test Email Service</div>",
+          "refreshOnChange": false,
+          "mask": false,
+          "tableView": true,
+          "alwaysEnabled": false,
+          "type": "htmlelement",
+          "input": false,
+          "key": "html"
+      },
       {
           "label": "Notification Type",
           "multiple": true,
@@ -50,6 +64,7 @@
           "components": [
               {
                   "label": "Subject",
+                  "labelPosition": "left-left",
                   "showWordCount": false,
                   "showCharCount": false,
                   "tableView": true,
@@ -63,20 +78,20 @@
                   },
                   "properties": {},
                   "tags": [],
-                  "row": "0-0"
-              },
-              {
-                  "label": "Email Body",
-                  "showWordCount": false,
-                  "showCharCount": false,
-                  "tableView": true,
-                  "alwaysEnabled": false,
-                  "type": "textfield",
-                  "input": true,
-                  "key": "emailBody",
-                  "properties": {},
-                  "tags": [],
-                  "row": "0-1"
+                  "row": "0-0",
+                  "defaultValue": "",
+                  "conditional": {
+                      "show": "",
+                      "when": "",
+                      "json": ""
+                  },
+                  "inputFormat": "plain",
+                  "encrypted": false,
+                  "customConditional": "",
+                  "logic": [],
+                  "widget": {
+                      "type": ""
+                  }
               },
               {
                   "label": "Email ID",
@@ -95,7 +110,25 @@
                   "tags": [],
                   "inputFormat": "plain",
                   "encrypted": false,
-                  "row": "0-2"
+                  "row": "0-1"
+              },
+              {
+                  "label": "Email Body",
+                  "labelPosition": "left-left",
+                  "showWordCount": false,
+                  "showCharCount": false,
+                  "tableView": true,
+                  "alwaysEnabled": false,
+                  "labelWidth": 46,
+                  "type": "textarea",
+                  "input": true,
+                  "key": "emailBody",
+                  "row": "0-2",
+                  "defaultValue": "",
+                  "inputFormat": "plain",
+                  "encrypted": false,
+                  "properties": {},
+                  "tags": []
               }
           ],
           "properties": {},
@@ -116,16 +149,17 @@
       {
           "label": "Unique Key",
           "labelPosition": "left-left",
-          "allowMultipleMasks": false,
           "showWordCount": false,
           "showCharCount": false,
+          "disabled": true,
           "tableView": true,
           "alwaysEnabled": false,
           "labelWidth": 46,
           "type": "textfield",
+          "allowMultipleMasks": false,
           "input": true,
           "key": "unique_key",
-          "defaultValue": "",
+          "defaultValue": "uniqueNumber",
           "validate": {
               "customMessage": "",
               "json": ""
@@ -134,7 +168,10 @@
           "encrypted": false,
           "properties": {},
           "tags": [],
-          "customDefaultValue": "value=\"uniqueNumber\";"
+          "customDefaultValue": "value=\"uniqueNumber\";",
+          "widget": {
+              "type": ""
+          }
       },
       {
           "label": "Unique Number",

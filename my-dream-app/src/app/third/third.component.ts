@@ -14,7 +14,7 @@ export class ThirdComponent implements OnInit {
   }
 
 
-  onSubmit(submission:object) {
+  onSubmit(submission:any) {
   
     console.log('subsbsbsbsbsbs',submission.data); 
     this.apiService.createEmailNotification(submission.data).subscribe((response) => {

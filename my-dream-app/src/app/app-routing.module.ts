@@ -10,15 +10,15 @@ const routes: Routes = [
     component:ThirdComponent
   },
   {
-    path:'notification-control-panel',
-    component:ThirdComponent
-  },
-  {
-    path:'notification-control-panel/second',
+    path:'second',
     component:SecondComponent
   },
   {
-    path:'notification-control-panel/third',
+    path:'first',
+    component:FirstComponent
+  },
+  {
+    path:'third',
     component:ThirdComponent
   }
 ];
