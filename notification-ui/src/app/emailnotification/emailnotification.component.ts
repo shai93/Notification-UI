@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
 
 @Component({
-  selector: 'app-third',
-  templateUrl: './third.component.html',
-  styleUrls: ['./third.component.scss']
+  selector: 'app-emailnotification',
+  templateUrl: './emailnotification.component.html',
+  styleUrls: ['./emailnotification.component.scss']
 })
-export class ThirdComponent implements OnInit {
+export class EmailnotificationComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
 

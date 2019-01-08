@@ -4,18 +4,18 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormioModule } from 'angular-formio';
-import { SecondComponent } from './second/second.component';
-import { FirstComponent } from './first/first.component';
-import { ThirdComponent } from './third/third.component';
+import { AgentsComponent } from './agents/agents.component';
+import { ServiceconfComponent } from './serviceconf/serviceconf.component';
+import { EmailnotificationComponent } from './emailnotification/emailnotification.component';
 import {ApiService} from './api.service';
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SecondComponent,
-    FirstComponent,
-    ThirdComponent
+    AgentsComponent,
+    ServiceconfComponent,
+    EmailnotificationComponent
   ],
   imports: [
     BrowserModule,
