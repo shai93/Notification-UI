@@ -18,7 +18,7 @@ const routes: Routes = [
     component:AgentsComponent
   },
   {
-    path:'notification-control-panel/serviceconfig',
+    path:'notification-control-panel/serviceconf',
     component:ServiceconfComponent
   },
   {
