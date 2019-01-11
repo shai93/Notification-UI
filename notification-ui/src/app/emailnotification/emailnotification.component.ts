@@ -1344,7 +1344,7 @@ export class EmailnotificationComponent implements OnInit {
           "customPrivate": false
         },
         "conditional": {
-          "show": "",
+          "show": "", 
           "when": null,
           "eq": ""
         },

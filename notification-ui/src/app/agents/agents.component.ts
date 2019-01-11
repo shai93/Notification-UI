@@ -6,7 +6,102 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agents.component.scss']
 })
 export class AgentsComponent implements OnInit {
-
+  formSchema: any = {
+    "display": "form",
+    "components": [
+      {
+        "label": "HTML",
+        "tag": "h4",
+        "className": "",
+        "attrs": [],
+        "content": "<div class=\"well\">Create Agents</div>",
+        "refreshOnChange": false,
+        "mask": false,
+        "tableView": true,
+        "alwaysEnabled": false,
+        "type": "htmlelement",
+        "input": false,
+        "key": "html"
+      },
+      {
+        "label": "Name of Alert",
+        "labelPosition": "left-left",
+        "allowMultipleMasks": false,
+        "showWordCount": false,
+        "showCharCount": false,
+        "tableView": true,
+        "alwaysEnabled": false,
+        "labelWidth": 46,
+        "type": "textfield",
+        "input": true,
+        "key": "nameOfAlert",
+        "widget": {
+          "type": ""
+        }
+      },
+      {
+        "label": "Template",
+        "labelPosition": "left-left",
+        "mask": false,
+        "tableView": true,
+        "alwaysEnabled": false,
+        "labelWidth": 46,
+        "type": "select",
+        "input": true,
+        "key": "template",
+        "defaultValue": "",
+        "data": {
+          "values": [
+            {
+              "label": "Template1",
+              "value": "template1"
+            },
+            {
+              "label": "Template2",
+              "value": "template2"
+            }
+          ]
+        },
+        "encrypted": false,
+        "valueProperty": "value"
+      },
+      {
+        "label": "Email config",
+        "labelPosition": "left-left",
+        "mask": false,
+        "tableView": true,
+        "alwaysEnabled": false,
+        "labelWidth": 46,
+        "type": "select",
+        "input": true,
+        "key": "emailConfig",
+        "defaultValue": "",
+        "data": {
+          "values": [
+            {
+              "label": "Config1",
+              "value": "config1"
+            },
+            {
+              "label": "Config2",
+              "value": "config2"
+            }
+          ]
+        },
+        "encrypted": false,
+        "valueProperty": "value"
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "key": "submit",
+        "disableOnInvalid": true,
+        "theme": "primary",
+        "input": true,
+        "tableView": true
+      }
+    ]
+  };
   constructor() { }
 
   ngOnInit() {
