@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { ServiceconfComponent } from './serviceconf/serviceconf.component';
-import { AgentsComponent } from './agents/agents.component';
-import { EmailnotificationComponent } from './emailnotification/emailnotification.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -13,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path:"",
-        redirectTo:"/notification-control-panel/emailnotification",
+        redirectTo:"/notification-control-panel/notificationdemo",
         pathMatch:'full'
       }, 
       {
@@ -21,15 +18,19 @@ const routes: Routes = [
         loadChildren: "./emailnotification/emailnotification.module#EmailnotificationModule"
       },
       {
-        path: 'notification-control-panel/agents',
+        path: 'notification-control-panel/createagent',
         loadChildren: "./agents/agents.module#AgentsModule"
+      },
+      {
+        path: 'notification-control-panel/agentslist',
+        loadChildren: "./agents/agentlist/agentlist.module#AgentslistModule"
       },
       {
         path: 'notification-control-panel/serviceconf',
         loadChildren: "./serviceconf/serviceconf.module#ServiceconfModule"
       },
       {
-        path: 'notification-control-panel/emailnotification',
+        path: 'notification-control-panel/notificationdemo',
         loadChildren: "./emailnotification/emailnotification.module#EmailnotificationModule"
       }
     ]

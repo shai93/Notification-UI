@@ -1,7 +1,5 @@
 <div class="container">
   <div class="col-md-12">
-    <div class="col-md-12">
-<formio [form]='formSchema'></formio>
-  </div>
+    <formio [form]='formSchema' (submit)="onSubmit($event.data)"></formio>
   </div>
 </div>

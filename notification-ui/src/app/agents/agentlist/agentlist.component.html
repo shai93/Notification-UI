@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="col-md-12">
+      <div class="col-md-12 shadow p-3 mb-5 bg-white rounded">
+          <h2>Agent List</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" class="textCenter">Alert Name</th>
+              <th scope="col" class="textCenter">Template Name</th>
+              <th scope="col" class="textCenter">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let list of lists let i=index">
+              <td scope="row">{{i + 1}}</td>
+              <td class="textCenter">{{list.alertName}}</td>
+              <td class="textCenter">{{list.templateName}}</td>
+              <td class="textCenter">
+                <a class="btn btn-default btn-xs" [routerLink]="['/edit', list.name]"><i class="fa fa-pencil-square-o"
+                    aria-hidden="true"></i> Edit</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -10,6 +10,9 @@ import { catchError, tap, map } from 'rxjs/operators';
 export class ApiService {
   
   API_URL  =  'http://breeze.accion.rocks/notification-ms/send';
+  TEMPLATE_URL = 'http://breeze.accion.rocks/template-engine-api/api/v1';
+  AGENT_POST_URL= "http://breeze.accion.rocks/notification-admin/admin/api/saveAgent";
+  AGENT_GET_URL= "http://breeze.accion.rocks/notification-admin/admin/api/listAgents";
 
   constructor(private  http:  HttpClient) {}
 
@@ -17,5 +20,16 @@ export class ApiService {
     return this.http.post(this.API_URL,submission);
   }
 
+  createAgent(submission){
+    return this.http.post(this.AGENT_POST_URL,submission);
+  }
+
+  getTemplates() {
+    return this.http.get(this.TEMPLATE_URL);
+  }
+
+  getAgentsList(){
+    return this.http.get(this.AGENT_GET_URL);
+  }
 
 }
