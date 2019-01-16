@@ -2,10 +2,13 @@
     <div class="col-md-12">
       <div class="col-md-12 shadow p-3 mb-5 bg-white rounded">
           <h2>Agent List</h2>
+          <a class="btn btn-default btn-xs" [routerLink]="['/notification-control-panel/createagent']" id="topaddbutton">
+            <span class="glyphicon glyphicon-plus">Add</span>
+          </a>
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col" class="textCenter">#</th>
               <th scope="col" class="textCenter">Alert Name</th>
               <th scope="col" class="textCenter">Template Name</th>
               <th scope="col" class="textCenter">Action</th>
@@ -13,12 +16,16 @@
           </thead>
           <tbody>
             <tr *ngFor="let list of lists let i=index">
-              <td scope="row">{{i + 1}}</td>
-              <td class="textCenter">{{list.alertName}}</td>
-              <td class="textCenter">{{list.templateName}}</td>
+              <td scope="row" class="textRight">{{i + 1}}</td>
+              <td class="textLeft">{{list.alertName}}</td>
+              <td class="textLeft">{{list.templateName}}</td>
               <td class="textCenter">
-                <a class="btn btn-default btn-xs" [routerLink]="['/edit', list.name]"><i class="fa fa-pencil-square-o"
-                    aria-hidden="true"></i> Edit</a>
+                  <a class="btn btn-default btn-xs" [routerLink]="['/edit', list.name]">
+                    <span class="glyphicon glyphicon-edit">Edit</span> 
+                  </a>
+                  <a class="btn btn-default btn-xs" [routerLink]="['/edit', list.name]">
+                      <span class="glyphicon glyphicon-trash"></span> 
+                  </a>
               </td>
             </tr>
           </tbody>
