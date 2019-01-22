@@ -34,7 +34,6 @@ describe('AgentslistComponent', () => {
 
 
   it('getagentslist not to be empty', () => {
-    component.getAgentsList();
     expect(component.getAgentsList()).not.toBeNull();
   });
 
