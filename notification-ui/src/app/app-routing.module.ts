@@ -26,6 +26,14 @@ const routes: Routes = [
         loadChildren: "./agents/agentlist/agentlist.module#AgentslistModule"
       },
       {
+        path: 'notification-control-panel/updateagent',
+        loadChildren: "./agents/agentupdate/agentupdate.module#AgentupdateModule"
+      },
+      {
+        path: 'notification-control-panel/updateagent/:alertName',
+        loadChildren: "./agents/agentupdate/agentupdate.module#AgentupdateModule"
+      },
+      {
         path: 'notification-control-panel/serviceconf',
         loadChildren: "./serviceconf/serviceconf.module#ServiceconfModule"
       },

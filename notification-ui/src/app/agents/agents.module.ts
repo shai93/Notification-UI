@@ -6,6 +6,7 @@ import { AgentsComponent } from './agents.component';
 import { AgentsRoutingModule } from './agents-routing.module';
 import { FormioModule } from 'angular-formio';
 
+
 @NgModule({
     imports: [CommonModule, RouterModule, AgentsRoutingModule,FormioModule],
     exports: [AgentsComponent],

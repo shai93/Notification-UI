@@ -16,8 +16,8 @@ export class AgentsComponent implements OnInit {
   }
 
   onSubmit(submission: any) {
-    console.log("form data", submission);
-    this.apiService.createAgent(submission).subscribe((response) => {
+    console.log("form data", submission.data);
+    this.apiService.createAgent(submission.data).subscribe((response) => {
       console.log(response);
     });
   }

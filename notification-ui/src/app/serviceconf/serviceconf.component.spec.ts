@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ServiceconfComponent } from './serviceconf.component';
+import { FormioModule } from 'angular-formio';
 
 describe('ServiceconfComponent', () => {
   let component: ServiceconfComponent;
@@ -8,6 +9,7 @@ describe('ServiceconfComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[FormioModule],
       declarations: [ ServiceconfComponent ]
     })
     .compileComponents();
