@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ServiceconfComponent } from './serviceconf.component';
 
-
+/**
+ * set default routing
+ */
 const routes: Routes = [
   {
     path: '',

@@ -173,12 +173,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/agents/agents.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/agents/agents.component.ts:14</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>create instance of AgentsComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -242,7 +244,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/agents/agents.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/agents/agents.component.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -280,13 +282,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/agents/agents.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/agents/agents.component.ts:28</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>submit form data</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -361,10 +365,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/agents/agents.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/agents/agents.component.ts:14</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>list of all agents</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -384,13 +394,23 @@ import { ApiService } from &#x27;../api.service&#x27;;
   styleUrls: [&#x27;./agents.component.scss&#x27;]
 })
 export class AgentsComponent implements OnInit {
-
+  /**
+   * list of all agents
+   */
   lists: any;
+  /**
+   * create instance of AgentsComponent
+   * @param apiService 
+   */
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
 
+  /**
+   * submit form data
+   * @param submission 
+   */
   onSubmit(submission: any) {
     console.log(&quot;form data&quot;, submission.data);
     this.apiService.createAgent(submission.data).subscribe((response) &#x3D;&gt; {

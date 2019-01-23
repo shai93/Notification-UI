@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceconfComponent implements OnInit {
 
-
+  /**
+   * create instance of ServiceconfComponent
+   */
   constructor() { }
 
   ngOnInit() {

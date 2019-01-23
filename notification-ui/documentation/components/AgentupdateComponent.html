@@ -179,12 +179,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:19</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>create instance of AgentupdateComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -260,13 +262,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:39</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>get particular agent</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -298,7 +302,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -336,13 +340,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:50</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>submit form data</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -417,10 +423,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:19</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>single agent</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -451,10 +463,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/agents/agentupdate/agentupdate.component.ts:15</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>alert name</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -475,26 +493,44 @@ import { ActivatedRoute } from &quot;@angular/router&quot;;
   styleUrls: [&#x27;./agentupdate.component.scss&#x27;]
 })
 export class AgentupdateComponent implements OnInit {
-  
-  alertName:any;
+  /**
+   * alert name
+   */
+  alertName: any;
+  /**
+   * single agent
+   */
   agent: any;
+  
+  /**
+   * create instance of AgentupdateComponent
+   * @param route 
+   * @param apiService 
+   */
   constructor(private route: ActivatedRoute, private apiService: ApiService) {
-    this.route.params.subscribe(params &#x3D;&gt; 
+    this.route.params.subscribe(params &#x3D;&gt;
       this.alertName &#x3D; params[&#x27;alertName&#x27;]
-      );
+    );
   }
 
   ngOnInit() {
     this.getAgent();
   }
 
+  /**
+   * get particular agent
+   */
   getAgent() {
     this.apiService.getAgent(this.alertName).subscribe((data: any) &#x3D;&gt; {
-      this.agent &#x3D; {data:data.data[0]};
+      this.agent &#x3D; { data: data.data[0] };
       console.log(this.agent);
     });
   }
 
+  /**
+   * submit form data
+   * @param submission 
+   */
   onSubmit(submission: any) {
     console.log(&quot;form data&quot;, submission.data);
     this.apiService.updateAgent(submission.data).subscribe((response) &#x3D;&gt; {

@@ -173,12 +173,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:15</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>create instance of AgentslistComponent</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -242,13 +244,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:29</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>get all agents</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -280,7 +284,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -330,10 +334,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/agents/agentlist/agentlist.component.ts:15</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>lists of all agents</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -353,15 +363,24 @@ import { ApiService } from &#x27;../../api.service&#x27;;
   styleUrls: [&#x27;./agentlist.component.scss&#x27;]
 })
 export class AgentslistComponent implements OnInit {
-  
 
+  /**
+   * lists of all agents
+   */
   lists: any;
+  /**
+   * create instance of AgentslistComponent
+   * @param apiService 
+   */
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.getAgentsList();
   }
 
+  /**
+   * get all agents
+   */
   getAgentsList() {
     this.apiService.getAgentsList().subscribe((data: any) &#x3D;&gt; {
       this.lists &#x3D; data.data;

@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AgentslistComponent } from './agentlist.component';
 
-
+/**
+ * set default routing
+ */
 const routes: Routes = [
   {
     path: '',
