@@ -81,10 +81,10 @@ const routes: Routes &#x3D; [
     component: AppComponent,
     children: [
       {
-        path:&quot;&quot;,
-        redirectTo:&quot;/notification-control-panel/notificationdemo&quot;,
-        pathMatch:&#x27;full&#x27;
-      }, 
+        path: &quot;&quot;,
+        redirectTo: &quot;/notification-control-panel/notificationdemo&quot;,
+        pathMatch: &#x27;full&#x27;
+      },
       {
         path: &#x27;notification-control-panel&#x27;,
         loadChildren: &quot;./emailnotification/emailnotification.module#EmailnotificationModule&quot;
