@@ -104,7 +104,7 @@
                                 <a href="#createAgent">createAgent</a>
                             </li>
                             <li>
-                                <a href="#createEmailNotification">createEmailNotification</a>
+                                <a href="#createNotification">createNotification</a>
                             </li>
                             <li>
                                 <a href="#getAgent">getAgent</a>
@@ -206,13 +206,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/api.service.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/api.service.ts:32</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>create agent</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -253,31 +255,33 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="createEmailNotification"></a>
+                        <a name="createNotification"></a>
                         <span class="name">
                             <b>
-                            createEmailNotification
+                            createNotification
                             </b>
-                            <a href="#createEmailNotification"><span class="icon ion-ios-link"></span></a>
+                            <a href="#createNotification"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>createEmailNotification(submission)</code>
+<code>createNotification(submission)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/api.service.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/api.service.ts:24</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>create notification</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -336,13 +340,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/api.service.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/api.service.ts:54</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>get particular agent based on alertname</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -405,13 +411,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/api.service.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/api.service.ts:46</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>get all agents</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -443,13 +451,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/api.service.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/api.service.ts:39</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>get all templates</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -481,13 +491,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/api.service.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/api.service.ts:64</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>update particular agent</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -742,39 +754,61 @@ import { catchError, tap, map } from &#x27;rxjs/operators&#x27;;
   providedIn: &#x27;root&#x27;
 })
 export class ApiService {
-  
-  API_URL  &#x3D;  &#x27;https://breeze.accion.rocks/notification-ms/send&#x27;;
+
+  API_URL &#x3D; &#x27;https://breeze.accion.rocks/notification-ms/send&#x27;;
   TEMPLATE_URL &#x3D; &#x27;https://breeze.accion.rocks/template-engine-api/api/v1&#x27;;
-  AGENT_POST_URL&#x3D; &quot;https://breeze.accion.rocks/notification-admin/admin/api/saveAgent&quot;;
-  AGENT_GET_URL&#x3D; &quot;https://breeze.accion.rocks/notification-admin/admin/api/listAgents&quot;;
-  AGENT_UPDATE_URL&#x3D; &quot;https://breeze.accion.rocks/notification-admin/admin/api/updateAgent&quot;;
+  AGENT_POST_URL &#x3D; &quot;https://breeze.accion.rocks/notification-admin/admin/api/saveAgent&quot;;
+  AGENT_GET_URL &#x3D; &quot;https://breeze.accion.rocks/notification-admin/admin/api/listAgents&quot;;
+  AGENT_UPDATE_URL &#x3D; &quot;https://breeze.accion.rocks/notification-admin/admin/api/updateAgent&quot;;
 
-  constructor(private  http:  HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  createEmailNotification(submission){
-    return this.http.post(this.API_URL,submission);
+  /**
+   * create notification
+   * @param submission 
+   */
+  createNotification(submission) {
+    return this.http.post(this.API_URL, submission);
   }
 
-  createAgent(submission){
-    return this.http.post(this.AGENT_POST_URL,submission);
+  /**
+   * create agent
+   * @param submission 
+   */
+  createAgent(submission) {
+    return this.http.post(this.AGENT_POST_URL, submission);
   }
 
+  /**
+   * get all templates
+   */
   getTemplates() {
     return this.http.get(this.TEMPLATE_URL);
   }
 
-  getAgentsList(){
+  /**
+   * get all agents
+   */
+  getAgentsList() {
     return this.http.get(this.AGENT_GET_URL);
   }
-  
+
+  /**
+   * get particular agent based on alertname
+   * @param alertName 
+   */
   getAgent(alertName: any) {
     return this.http.get(this.AGENT_GET_URL, {
       params: { alertName: alertName }
     });
   }
 
-  updateAgent(submission){
-    return this.http.put(this.AGENT_UPDATE_URL,submission);
+  /**
+   * update particular agent
+   * @param submission 
+   */
+  updateAgent(submission) {
+    return this.http.put(this.AGENT_UPDATE_URL, submission);
   }
 
 }

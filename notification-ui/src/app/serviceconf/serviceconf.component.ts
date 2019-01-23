@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceconfComponent implements OnInit {
 
-  
+
   constructor() { }
 
   ngOnInit() {

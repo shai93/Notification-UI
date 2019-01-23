@@ -51,13 +51,6 @@ describe('ApiService', () => {
     });
   });
 
-  it('should  get templates', () => {
-    const service: ApiService = TestBed.get(ApiService);
-    service.getTemplates().subscribe((data: any) => {
-      expect(data.error).toBe(false);
-    });
-  });
-
   it('should  create agent', () => {
     const service: ApiService = TestBed.get(ApiService);
     service.createAgent(submission).subscribe((data: any) => {

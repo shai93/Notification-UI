@@ -392,8 +392,8 @@ export class AgentsComponent implements OnInit {
   }
 
   onSubmit(submission: any) {
-    console.log(&quot;form data&quot;, submission);
-    this.apiService.createAgent(submission).subscribe((response) &#x3D;&gt; {
+    console.log(&quot;form data&quot;, submission.data);
+    this.apiService.createAgent(submission.data).subscribe((response) &#x3D;&gt; {
       console.log(response);
     });
   }
@@ -405,7 +405,7 @@ export class AgentsComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
   &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
-    &lt;formio src&#x3D;&quot;https://breeze.accion.rocks/form-builder/createagent&quot; (submit)&#x3D;&quot;onSubmit($event.data)&quot;&gt;&lt;/formio&gt;
+    &lt;formio src&#x3D;&quot;https://breeze.accion.rocks/form-builder/createagent&quot; (submit)&#x3D;&quot;onSubmit($event)&quot;&gt;&lt;/formio&gt;
   &lt;/div&gt;
 </code></pre>
     </div>
@@ -455,7 +455,7 @@ export class AgentsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="col-md-12">    <formio src="https://breeze.accion.rocks/form-builder/createagent" (submit)="onSubmit($event.data)"></formio>  </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="col-md-12">    <formio src="https://breeze.accion.rocks/form-builder/createagent" (submit)="onSubmit($event)"></formio>  </div></div>'
     var COMPONENTS = [{'name': 'AgentsComponent', 'selector': 'app-agents'},{'name': 'AgentslistComponent', 'selector': 'app-agents'},{'name': 'AgentupdateComponent', 'selector': 'app-agents'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EmailnotificationComponent', 'selector': 'app-emailnotification'},{'name': 'ServiceconfComponent', 'selector': 'app-serviceconf'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AgentsComponent'};

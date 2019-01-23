@@ -7,7 +7,7 @@ import { ServiceconfRoutingModule } from './serviceconf-routing.module';
 import { FormioModule } from 'angular-formio';
 
 @NgModule({
-    imports: [CommonModule, RouterModule, ServiceconfRoutingModule,FormioModule],
+    imports: [CommonModule, RouterModule, ServiceconfRoutingModule, FormioModule],
     exports: [ServiceconfComponent],
     declarations: [ServiceconfComponent],
     providers: []

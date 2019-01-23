@@ -9,10 +9,10 @@ const routes: Routes = [
     component: AppComponent,
     children: [
       {
-        path:"",
-        redirectTo:"/notification-control-panel/notificationdemo",
-        pathMatch:'full'
-      }, 
+        path: "",
+        redirectTo: "/notification-control-panel/notificationdemo",
+        pathMatch: 'full'
+      },
       {
         path: 'notification-control-panel',
         loadChildren: "./emailnotification/emailnotification.module#EmailnotificationModule"

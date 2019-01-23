@@ -199,11 +199,10 @@ import { RouterModule } from &quot;@angular/router&quot;;
 import { AgentsComponent } from &#x27;./agents.component&#x27;;
 import { AgentsRoutingModule } from &#x27;./agents-routing.module&#x27;;
 import { FormioModule } from &#x27;angular-formio&#x27;;
-import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
 
 
 @NgModule({
-    imports: [CommonModule, RouterModule, AgentsRoutingModule,FormioModule,HttpClientModule],
+    imports: [CommonModule, RouterModule, AgentsRoutingModule,FormioModule],
     exports: [AgentsComponent],
     declarations: [AgentsComponent],
     providers: []
