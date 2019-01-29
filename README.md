@@ -1,27 +1,53 @@
-# Notification Control Panel
+# Notification UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.0.
+> Notification Engine provides a scalable and flexible mechanism for delivering notification messages based on predefined predicates. It is used for sending webpush,email,sms,whatsapp and custom webhook notifications and/or alerts.You can even send bulk notifications as and when required.
 
-## Development server
+## **Table of Contents**
+- [Prerequisite](#prerequisite)
+- [Setup](#setup)
+  - [Clone](#clone)
+  - [Install](#install)
+  - [Run](#run)
+- [Tests](#tests)
+- [Code Documentation](#code-documentation)
+- [Documentation](#documentation)
+- [License](#license)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## **Prerequisite**
+1. Angular v6.1.3
+2. NodeJs v8.9.4
+3. npm v5.6.0
 
-## Code scaffolding
+## **Setup**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> ### **Clone**
+```
+$ git clone https://github.com/shai93/Notification-UI.git
+```
 
-## Build
+> ### **Install**
+```
+$ npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+> ### **Run**
+```
+$ ng serve
+```
 
-## Running unit tests
+## **Tests**
+```
+$ ng test
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## **Code Documentation**
+```
+$ npm run compodoc
+$ compodoc -s
+```
 
-## Running end-to-end tests
+## **Documentation**
+ - Read <a href="#" target="_blank">here</a> for detailed documentation and architecture diagram.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## **License**
+ - <a href="https://gitlab.com/breeze-framework/mail/mail-service/blob/master/LICENSE" target="_blank">MIT</a>
